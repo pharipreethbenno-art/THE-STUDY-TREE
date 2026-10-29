@@ -1,0 +1,4 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "sqlite" url = env("DATABASE_URL") }
+model Lesson { id String @id @default(cuid()) grade Int subject String textbook String @default("NCERT") chapter String title String summary String content String createdAt DateTime @default(now()) }
+model TestAttempt { id String @id @default(cuid()) learnerTag String grade Int subject String chapter String score Int total Int answers String createdAt DateTime @default(now()) }
